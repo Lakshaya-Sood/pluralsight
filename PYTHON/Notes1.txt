@@ -1,0 +1,43 @@
+features of python:
+1) it is PL with dynamic type system - means -> any type check in PL happens at runtime instead of compile time
+	- pros of this -> code is more readable and easier to write(less code written without type annotations) when there is no type clutter
+					-> as there is no compile phase,lead to quicker turnaround when making software changes
+2) huge emphasis on readability 
+3) it is used as an interpreted language(RMAI- read more about it)
+4) it is a multi-paradigm language as both OOP and Structural-oriented programming can be done through it. 
+	-> also uses concepts of functional programming when working with groups of things
+x-x-x-x-x	
+history of python:
+
+1991 (1st release) ---- 
+ descendent of ABC PL and written such that it would appeal to UNIX and C hackers
+------------------
+2000 (python 2.0) -----
+ many new features like cycle detecting garbage collector and support for Unicode added
+ development process became more transparent and community-backed through PEPs(python enhancements proposals)
+-----------------
+early development process called (Python 3000) or PY3K
+2008 (python 3.0) -----
+ major backward incompatible release
+ but latest version of python 3.x are made backward compatible 2.7 & 2.6
+x-x-x-x-x	 
+some applications in which it is used -> Blender, Red hat Anaconda
+Google App engine supports Python
+
+current & future scope in python(search on google):
+-stack overflow reports compare various PL
+-IEEE spectrum programming language ranking
+-TIOBE PL ranking
+
+PEP 20 The Zen of Python - https://www.python.org/dev/peps/pep-0020/
+Alan Kay -
+"Perspective is worth 80 IQ points."
+Tony Hoare -
+"I conclude that there are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies and the other way is to make it so complicated that there are no obvious deficiencies."
+
+maintenance is expensive in software development, there python philosophy is mainly focused on readability of code 
+datastax devcenter 1.6 download
+
+Why Python is different?
+1) it was designed to be highly extensible - many functionality can be added on top of core python language
+2) Embeddable scripting language

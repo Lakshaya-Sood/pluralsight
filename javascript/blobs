@@ -1,0 +1,14 @@
+Multipurpose Internet Mail Extensions (MIME) type :-
+a list of all the possible media types on internet : https://www.iana.org/assignments/media-types/media-types.xhtml
+value  = <type>/<subtype>
+	type- defines the a category
+	subtype- defines the specific type in that category
+example -> 
+		application/json
+		application/javascript
+		image/png
+		audio/mpeg
+		text/plain
+		text/html
+		video/mp4
+		
