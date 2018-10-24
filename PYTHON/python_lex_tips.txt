@@ -1,0 +1,199 @@
+for number in range(start,end,step)
+
+start - Starting number of the sequence
+end - Generate number up to end, but not including this number
+step - Difference between each number in the sequence
+
+eg: 
+-	for number in range(5,0,-1): for 5,4,3,2,1
+-	for number in range(1,7,2): for 1,3,5
+------------------------------------------------------
+for num in 23, 45, 50, 65, 76, 90:
+
+--To CHECk if element exist in a list
+if airline in list_of_airlines  
+  
+--iteration through INDEX
+for index in range(0,len(list_of_airlines)):
+
+--iteration through VALUE
+for airline in list_of_airlines: 
+
+--to get index
+<list_var>.index(<value_to_search>)
+
+----------- SLICE ----------------
+List of airlines	AI	SJ	JA	EM	AA
+Index				0	1	2	3	4
+Negative Index		-5	-4	-3	-2	-1
+
+eg: - 
+x = [1,2,3,4,5,6,7]
+print(x[2:-4]) //[4]
+print(x[2:-5]) //[]
+print(x[2:-6]) //[]
+
+List are MUTABLE while Tuples are IMMUTABLE
+eg: lunch_menu=("Welcome Drink","Veg Starter","Non-Veg Starter","Veg Main Course","Non-Veg Main Course","Dessert") // TUPLE
+--mutation in tuple will result in error
+
+--------------STRINGS--------------
+Strings are IMMUTABLE
+rest works similar to list means cannot do str[i] = some character
+
+str.index(sub[, start[, end]] )
+---------------SETS----------------
+New_set = {a,b,c,d,f}
+new_list = [1,2,3,1,5,6,2];
+removeDuplicatefromList = list(set(new_list));
+
+set operations like
+1) setA & setB ==> common among both
+2) setA - setB ==> removes common from A and return A
+3) setA | setB ==> returns a set with all elements of A and B
+
+----------------DICTIONARY-----------------
+The key should be unique and can be of any data type.
+they are MUTABLE
+dictX= {"a":1,"b":2,3:6}
+for key,value in dictX.items():
+	dictX[key] = value*2
+	print(dictX[key],value)
+print(dictX)
+--------
+1) diff between parameters and arguments
+ -- parameters specified in function definition and called formal arguments too
+ -- arguments/ actual arguments are  used while calling function
+2) python does not have switch/case statements
+3)====
+	--passing a list to function while calling is an example of VALUE BY REFERENCE 
+	-- if passed string then string will not be MUTATED . EG
+		def ChangeString(myStr):
+			myStr = 'Y'
+		myStr = 'X'
+		print(myStr) // 'X'
+		ChangeString(myStr)
+		print(myStr) // still 'X' and not 'Y'
+4) using 'global' keyword to let function know that "global variable will be used"
+	-- VERYY IMPP --===>>>>> if a global keyword is not used the a variable declared in the main body is not ASSCESSBLE in function
+	like:
+	result = 5
+	def myFuntion():
+		result=10 // this is a new local variable inside function
+	myFunction()
+	print(result); // is still 5
+	#x-x-x-x-x-x-x
+	result = 5
+	def myFuntion():
+		global result;
+		result=10 // this is a global variable result declared outside
+	myFunction()
+	print(result); // is now with new value 10
+
+5) printing a variable directly with initializing/declaring it gives error (AN EXAMPLE OF NAME-ERROR)
+	like: print(some_new_varible)
+	
+6) random number generation 
+import random
+random.randrange(x,y) // random number between x and y (exclusive of y)
+
+--------- FUNTIONS -----------
+case 1 - POSITIONAL
+def  myFunction(x,y):
+	pass;
+myFunction(a,b)
+
+case 2 - KEYWORD
+def myFunction(x,y)
+	pass;
+myFunction(x='abc',y='bcd')
+
+case 3 - DEFAULT
+def myFunction(x,y='bcd'):
+	pass;
+myFunction(x='abc') // with default
+myFunction(x='abc',y='efg') // without default
+
+case 4 - VARIABLE ARGUMENT COUNT
+def myFunction(x,y,*z)
+	pass;
+myFunction(1,2,3,4,5) // x =1, y =2, z=Tuple(3,4,5)
+myFunction(1,2,3) // x =1, y =2, z=Tuple(<EMPTY>)
+
+either use syntax like CASE 1 or CASE 2 , DOnt mix
+as it will give error
+myFunction(x="123","567") // error "ERROR:- positional argument follows keyword argument"
+-----------------------------------------------------
+Python utility to write test is Pytest
+import pytest AND assert(expression to test mostly conditional expression) something 
+https://docs.pytest.org/en/latest/getting-started.html
+
+called Unit Testing:
+-- Logic Coverage
+-- Boundary Value Analysis
+-- Equivalence Partitioning
+-- Error Guessing
+-- Random Generation
+
+-------------------Exception Handling-----------------------
+basic->
+try:
+	<some code>
+except ZeroDivisionError:
+	print("ZeroDivisionError")
+except IndexError:
+	print("IndexError")
+except ValueError:
+	print("ValueError")
+except:
+	print("Error")
+finally:
+	<some other code>
+
+Built in Exceptions 
+1) ZeroDivisionError ----- When a value is divided by zero
+2) TypeError ----- When we try to do an operation with incompatible data types 
+	eg:
+	myVar = "abc"
+	print(myVar+3) // TypeError
+3) NameError ----- When we try to access a variable which is not defined [eg: print(some_new_varible)]
+4) IndexError ----- When we try to access an index value which is out of range [eg: myList=[1,2,3]; print(myList[3])//IndexError]
+5) ValueError ------ When we use a valid data type for an argument of a built-in function but passes an invalid value for it
+	eg: inbuilt function that convert string to integer : int()
+	print(int('A')) // ValueError : as there is no integer value for A
+	
+	
+Note;
+y = 'x'
+try:
+  print(y+1);
+except:
+  print('123')
+except TypeError:
+  print('456')
+ 
+above will result in error that <SyntaxError: default 'except:' must be last>
+
+-- A finally block of statement is an optional part of the try-except statements. A code written inside the finally block will ALWAYS be executed.
+
+-- there will never be a case in which two different EXCEPT block gets executed (NEVER EVER)
+
+
+-------------------------------Python Modules---------------------------
+--FOLDER
+ |--main.py
+ |--other.py
+ 
+Inside other.py 
+def add(x,y):
+    print(x+y)
+	
+Inside main.py
+import other
+other.add(10,20) //print 30
+-------------MATH module----------------------
+import math
+math.ceil(x)
+math.floor(x)
+math.factorial(x)
+math.fabs(x) //gives absolute value

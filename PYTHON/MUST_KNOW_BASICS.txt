@@ -1,0 +1,254 @@
+PYTHON OPERATION THAT YOU MUST KNOW
+-----------------------------------
+-------------LIST------------------
+1)LOOPING 
+WAY-1
+for i in myList:
+	print(i) // i here is the element of list
+	
+WAY-2
+for i in range(0,len(myList)):
+	print(myList[i]) // i here is just a number(but used as index of elements of list)
+	
+WAY-3
+for index,value in enumerate(myList);
+	print(index,value)
+	
+	--BTS behind the scene
+	print(enumerate([3,7,19])) ============  <enumerate object at 0x7f5aaa647120>
+	print(list(enumerate([3,7,19])))  ========== [(0, 3), (1, 7), (2, 19)]
+	
+	
+WAY-4 [SIDE BY SIDE ITERATE 2 LISTS]
+for value1,value2 in zip(myList1,myList2): // number of iteration will always be equal to minimum length of two list
+	print(value1,value2); // values from each list
+	
+	--BTS
+	print(zip([1,2],[3,4])) ============= <zip object at 0x7f44fb39ce08>
+	print(list(zip([1,2],[3,4]))) ========== [(1, 3), (2, 4)]  // LIST of TUPELS
+
+2)CLONE/COPY
+WAY-1
+new_list = old_list.copy()
+
+WAY-2 (fastest way of all)
+new_list = old_list[:]
+
+WAY-3
+new_list = list(old_list)
+
+WAY-4
+using ["COPY"] library 
+import copy
+new_list = copy.copy(old_list)
+new_list = copy.deepcopy(old_list)
+
+3)REMOVE (a particular element)
+aList = [123, 'xyz', 'zara', 'abc', 'xyz'];
+aList.remove('xyz'); // only removes the first 'xyz' and not both
+print(aList); // [123, 'zara', 'abc', 'xyz']
+aList.remove('mno'); // ERROR: VALUE-ERROR
+note** if element which we are trying to remove is not the list then will get a VALUE-ERROR
+
+4)REVERSE 
+WAY-1(fastest)
+myList = [1,2,3]
+reverse_list = myList[::-1]  //[3,2,1]
+
+WAY-2
+myList = [1,2,3]
+print(reversed(myList)) ========= <list_reverseiterator object at 0x7f50753b4208>
+print(list(reversed(myList)))  ========= [3,2,1]
+
+5)CONVERT STRING to INTERGER/FLOAT
+int(<a integer number string>,<a float number>,<cannot be both string and float>) // otherwise VALUE-ERROR
+float((<a integer number string>,<a float number>,<can be both string and float>)) // otherwise VALUE-ERROR
+
+6)ACCESS ELEMENT BY INDEX
+myList[1]
+myList[0] = some value
+LISTS are mutable
+
+7) LENGTH
+len(myList)
+
+8) REMOVE DULICATES
+myList = [1,4,2,3,1,3,4,4]
+list(set(myList)) // [1,2,3,4]
+**conversion from list to set removes duplicates as well as sort the elements ascending order
+ 
+9) FIND INDEX of element
+myList.index(<element>) [optional: start, end]
+**<element> should be in myList otherwise VALUE-ERROR
+
+10) COUNT
+list.count(element)
+
+11) MAXIMUM
+max(list)
+
+12)SORTED
+default is ascending
+sorted([4,3,2,1]) // 1,2,3,4 
+sorted([1,2,3,4],reverse='False') // 4,3,2,1
+
+14) below are other
+--myList.extend(otherList) // adds elements of otherList to myList
+--num_list.insert(3,60) // add at particular position --- inserting 60 at 3rd index
+--num_list.append(60) // add at the last
+--num_list.pop(3) // removes element at index 3
+***might be deprricated in newer version of python***
+num_list.remove(30)
+num_list.sort()
+num_list.reverse()
+-------------TUPLE------------------
+they are like list but immutable
+-------------STRING------------------
+1) SPLIT 
+x = ‘blue,red,green’
+x.split(“,”)
+**x.split() // default split is space
+
+2) CONVERT INTERGER TO STRING
+str(<an integer>)
+
+3) ACCESS CHARACTER BY INDEX
+myStr = "abcdefgh"
+print(myStr[1]) // b
+note** Strings are immutable so myString[1] = '<some character>' will give error
+
+4) LENGTH
+len(myString)
+
+5) SUBSTRING [== slicing in LISTS]
+>>> x = "Hello World!"
+>>> x[2:]
+'llo World!'
+
+6) REVERSE A STRING
+WAY-1 (fastest)
+myString= 'yo bhai'
+print(myString[::-1]) // 'iahb oy'
+
+WAY-2
+myString= 'yo bhai'
+print(reversed(myString)); // <reversed object at 0x7f3d82bca390>
+print(''.join(reversed(myString))); // 'iahb oy'
+
+7) STRIP or TRIM a STRING
+string.split(option argument the character)
+print("abc  Hello\n".strip("\n"))  // abc Hello
+print("      xyz kli   ".strip()) // xyz kli
+default behaviour only strip the spaces
+
+8) IF CHARACTER IN STRING EXIST
+if ('a' in 'abc') // true
+
+9) FIND INDEX of character/sunstring
+myString.index(char/substring, [optional: start, end])
+**<char/substring> should be in myString otherwise VALUE-ERROR
+
+10) COUNT
+string.count(substring)
+
+11) UPPERCASE & LOWERCASE
+str.uuper() 
+str.lower()
+** they do not mutate the actual string .... they return a new string
+
+12) SORT
+''.join(sorted(myString))
+''.join(sorted(myString,reverse=True))
+
+13) FIND (better to use find() instead of index() because if substring is not found then will return -1 as index() gives error)
+str.find(substring)
+
+14) below are other
+--name.replace("a","A") -- behaves like Replace all(does not change the same string as they are immutable) 
+--name.startswith("Ra") -- give boolean
+--name.endswith("ha") -- gives boolean
+--name.isdigit() -- if string contains all letters
+--name.split() -- default split is space
+-------------DICTIONARY------------------
+
+1) GET value by key
+mydict = {"a":1}
+print(mydict["a"]) // prints 1
+print(mydict.get("a")) //prints 1
+
+2) UPDATE dict
+mydict = {"a":1}
+mydict["a"] = 5
+mydict.update({"b":1,"c":2})
+print(mydict) // {'a': 5, 'b': 1, 'c': 2}
+
+3) LOOPING
+in python 2.x
+for key, value in d.iteritems():
+
+in python 3.x
+for key, value in d.items():
+-------------BOOLEAN------------------
+True & False (Remember first letter capital)
+
+----------OTHERS-------------
+1)LEXOGRAPHICAL Order is (dictionary order/alphabetical order)
+
+2)join operation have both list and string 
+***join takes only one argument
+-- '1'.join(['a','b','c'])  -> a1b1c
+-- '1'.join('3') or '1'.join(['3'])  -> 3
+-- '1'.join(['x','y']) -> x1y
+
+3) if character exists in string VS if element exists in list
+if('a' in 'abc'): // True
+if(1 in [1,2,3]): always False
+if([1,2,3].count(1)): // True
+if([1,2,3].count(4)): // False
+
+4) type checking in python
+isinstance(1.1, float);
+isinstance(1, int);
+isinstance('a', str);
+isinstance({'a':1}, dict);
+isinstance(True, bool)
+
+-----------WHAT WILL BE THE RESULT OF FOLLOWING------
+1)
+def func():
+  pass;
+  print("hello")
+
+func()
+Ans: it will print hello. (pass is generally used when we have nothing in body of if,elif,else,loops,function)
+
+2) Python: How exactly can you take a string, split it, reverse it and join it back together again?
+Ans: myString = 'a,b,c,d,e,f' then  ''.join(reversed(myString.split(',')))  ===== fedcba
+
+3) How to sort a string
+Ans: There is no direct method. Like no direct function to convert "cab" => to => "abc"
+myString = "cab"
+''.join(sorted(myString))
+
+4) will it work? ;)
+strings
+-- print("abc" + "xyz") // abcxyz
+-- print("abc" - "xyz") // error TYPE-ERROR
+-- print("abc" | "xyz") // error TYPE-ERROR
+-- print("abc" & "xyz") // error TYPE-ERROR
+lists
+-- print([1,2,3] + [4,5,6]) // [1,2,3,4,5,6]
+-- print([1,2,3] - [4,5,6]) // error TYPE-ERROR
+-- print([1,2,3] |[4,5,6]) // error TYPE-ERROR
+-- print([1,2,3] & [4,5,6]) // error TYPE-ERROR
+sets
+-- print({1,2,3,4} + {1,5,4,6}) // error TYPE-ERROR
+-- print({1,2,3,4} - {1,5,4,6}) // {2, 3}
+-- print({1,2,3,4} | {1,5,4,6}) // {1, 2, 3, 4, 5, 6}
+-- print({1,2,3,4} & {1,5,4,6}) // {1, 4}
+
+5) find mean in python
+Ans: sum(myList)/float(len(myList))
+
+6) How can I compare two lists in python and return matches
+Ans: convert into sets and perform &(intersection) on them and covert back to list again 
