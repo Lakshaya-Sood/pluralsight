@@ -1,0 +1,32 @@
+- Reading Files
+
+	r - Open file for reading.
+	r+ - Open file for reading and writing.
+	rs - Open file for reading in synchronous mode.
+	rs+ - Open file for reading and writing, asking the OS to open it synchronously.
+	
+	**Note -  An exception occurs if the file does not exist.
+
+- Writing Files
+
+	w - Open file for writing. The file is created (if it does not exist) or truncated (if it exists).
+	wx - Like 'w' but fails if the path exists.
+	w+ - Open file for reading and writing. The file is created (if it does not exist) or truncated (if it exists).
+	wx+ - Like 'w+' but fails if the path exists.
+
+- Appending to Files
+
+	a - Open file for appending. The file is created if it does not exist.
+	ax - Like 'a' but fails if the path exists.
+	a+ - Open file for reading and appending. The file is created if it does not exist.
+	ax+ - Like 'a+' but fails if the path exists.
+	as - Open file for appending in synchronous mode. The file is created if it does not exist.
+	as+ - Open file for reading and appending in synchronous mode. The file is created if it does not exist.
+	
+	
+r- reading
+w- writing
+a- appinding
+
+s - syncronous
++ - its going to do the other thing as well(if writing then reading , vice versa)

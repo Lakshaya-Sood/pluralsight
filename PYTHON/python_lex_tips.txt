@@ -197,3 +197,21 @@ math.ceil(x)
 math.floor(x)
 math.factorial(x)
 math.fabs(x) //gives absolute value
+--------------FILE HANDLING---------------------
+open(file_path,operation) ------ operation can be r,w,a for read, write and append
+close() ---- This method is used to close a file which is already open.
+write() ------ This method is used to write a string to a file, if file is present. If not, it creates the file and writes the string into it.
+read() ------- This method is used to read all the contents of a file into a string.
+
+try:
+    flight_file=open("flight.txt","r")
+    text=flight_file.read()
+    print(text)
+    flight_file.write(",Good Morning") #Exception occurs in this line
+    flight_file.close()#This line will not be executed
+except:
+    print("Error occurred")
+    if flight_file.closed:
+        print("File is closed")
+    else:
+        print("File is open")

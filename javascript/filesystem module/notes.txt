@@ -1,0 +1,20 @@
+if the file system function returns the file descriptor (FD) for you then you need to close it explicitly by calling fs.close.
+like:
+	- fs.open
+	
+else(some functions in file system works like - open the file, operate on it, and then close it for you) when don't return (FD)
+like:
+	- fs.readFile
+	- fs.writeFile
+	- fs.appendFile
+	
+The streams returned by fs.createReadStream and fs.createWriteStream close after the stream ends but may be closed early. If you have paused a stream, you must call close on the stream to close the fd or resume the stream and let it end after emitting all its data.
+
+
+What is a File Descriptor?
+It is an Integer value. 
+0
+1
+2
+
+https://www.youtube.com/watch?v=btT4HDKNIOw
