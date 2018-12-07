@@ -28,5 +28,9 @@ r- reading
 w- writing
 a- appinding
 
-s - syncronous
-+ - its going to do the other thing as well(if writing then reading , vice versa)
+suffix meaning
+s - synchronous
++ - it is going to do the other thing as well
+x - if the file exist then error
+w+ == r+
+a+ - reading + appending
