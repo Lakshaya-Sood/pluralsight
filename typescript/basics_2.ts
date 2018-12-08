@@ -31,7 +31,7 @@ var y = (function () {
 // TypeScript uses postfix type annotations means 
 // decalare varible like var foo: number = 123; (type comes after variable name)
 
-var foo: number = '123'; // Error: cannot assign a `string` to a `number`
+var foo: number = '123'; // Error: cannot assign a `string` to a `number` // you decide the type not compiler
 
 //Types are structural
 interface Point2D {
@@ -46,3 +46,9 @@ interface Point3D {
 var point2D: Point2D = { x: 0, y: 10 }
 var point3D: Point3D = { x: 0, y: 10, z: 20 }
 function iTakePoint2D(point: Point2D) { /* do something */ }
+
+//TypeScript is AMBIENT ... need to explore or comwback later
+/*
+TypeScript provides you with a sliding scale of how much or how little effort you want to put in your 
+declarations, the more effort you put the more type safety + code intelligence you get
+*/

@@ -1,0 +1,17 @@
+https://basarat.gitbooks.io/typescript/docs/classes-emit.html
+
+class.prototype and class's object.__proto__ are equal
+
+function Foo() { }
+
+var foo = new Foo();
+
+console.log(foo.__proto__ === Foo.prototype); // True!
+
+var c = (function(){
+	return ()=>{console.log(this)}
+})()
+
+var c = (function(){
+	return function{console.log(this)}
+})()

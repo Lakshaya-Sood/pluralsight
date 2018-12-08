@@ -2,7 +2,7 @@
 
 // to get started you need 
 //1. Typscript compiler
-//2. Typescript IDE to help you code fast (ext recommendation like "TypeScript God")
+//2. Typescript IDE to help you code fast (ext recommendations like "TypeScript God")
 
 // Installing TypeScript
 // for latest stable version - npm install -g typescript
