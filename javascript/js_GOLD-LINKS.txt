@@ -9,9 +9,11 @@ var foo = new Foo();
 console.log(foo.__proto__ === Foo.prototype); // True!
 
 var c = (function(){
-	return ()=>{console.log(this)}
+	this.x = 1
+	return ()=>{console.log(this.x)}
 })()
 
 var c = (function(){
-	return function{console.log(this)}
+	this.x = 1
+	return function(){console.log(this.x)}
 })()
